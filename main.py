@@ -4,9 +4,18 @@ os.environ.setdefault('MATPLOTLIB', 'false')
 
 import inspect
 import json
-from nicegui import ui
-import uvicorn
 from fastapi import FastAPI
+import uvicorn
+from nicegui import run as nicegui_run, ui
+
+# Vercel's Lambda sandbox lacks /dev/shm, so skip ProcessPoolExecutor setup
+_orig_run_setup = nicegui_run.setup
+def _safe_run_setup():
+    try:
+        _orig_run_setup()
+    except OSError:
+        pass
+nicegui_run.setup = _safe_run_setup
 
 app = FastAPI()
 
