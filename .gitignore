@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+build/
+dist/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# NiceGUI Local Storage
+.nicegui/
+
+# Vercel & Environment Secrets
+.vercel/
+.env
+.env.*
+!.env.example
+
+# IDEs & OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
