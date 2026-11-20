@@ -83,9 +83,3 @@ def decrypt(text: str, key: str = 'KEY, DOG') -> str:
     return state
 
 
-# Quick verification against the lecture example
-if __name__ == '__main__':
-    cipher = encrypt('CAT', 'KEY, DOG')
-    plain = decrypt(cipher, 'KEY, DOG')
-    print(f'Encrypted CAT -> {cipher}')  # MKX
-    print(f'Decrypted {cipher} -> {plain}')  # CAT
