@@ -1,7 +1,11 @@
+import os
+os.environ.setdefault('NICEGUI_STORAGE_PATH', '/tmp/.nicegui')
+os.environ.setdefault('MATPLOTLIB', 'false')
+
 import inspect
 import json
-import uvicorn
 from nicegui import ui
+import uvicorn
 from fastapi import FastAPI
 
 app = FastAPI()
