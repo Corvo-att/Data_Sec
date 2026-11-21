@@ -1,8 +1,16 @@
 def encrypt(text: str, shift: int) -> str:
-    # TODO: write your Caesar encryption logic here
-    return f"[caesar.encrypt not implemented | shift={shift}]"
+
+    result = []
+    for char in text:
+        if 'A' <= char <= 'Z':
+            result.append(chr((ord(char) - ord('A') + shift) % 26 + ord('A')))
+        elif 'a' <= char <= 'z':
+            result.append(chr((ord(char) - ord('a') + shift) % 26 + ord('a')))
+        else:
+            result.append(char)
+    return ''.join(result)
 
 
 def decrypt(text: str, shift: int) -> str:
-    # TODO: write your Caesar decryption logic here
-    return f"[caesar.decrypt not implemented | shift={shift}]"
+ 
+    return encrypt(text, -shift)
